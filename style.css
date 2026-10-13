@@ -1,0 +1,35 @@
+body{
+    font-family: Verdana;
+    font-size:2em;
+}
+
+#count{
+    display:block;
+    text-align: center;
+    font-size:10em;
+    font-family: Helvetica;
+}
+
+#buttonContainer{
+    text-align: center;
+}
+
+::selection{
+    color:white;
+    background-color: blue;
+}
+
+.buttons{
+    padding:10px 20px;
+    font-size:1.5em;
+    color:white;
+    background-color: blue;
+    border-radius:5px;
+    cursor:pointer;
+    transition:backgroud-color 10s;
+}
+
+.buttons:hover{
+    background-color: rgb(118, 118, 255);
+}
+
