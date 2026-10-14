@@ -1,18 +1,4 @@
-//let count=0;
-// document.getElementById("increase").onclick=function(){
-//     count++;
-//     document.getElementById("count").textContent=count;
-// }
 
-// document.getElementById("decrease").onclick=function(){
-//     count--;
-//     document.getElementById("count").textContent=count;
-// }
-
-// document.getElementById("reset").onclick=function(){
-//     count=0;
-//     document.getElementById("count").textContent=count;
-// }
 
 
 // <!DOCTYPE html>
@@ -57,3 +43,19 @@ resetBtn.onclick=function(){
     count=0;
     countLabel.textContent=count;
 }
+
+//let count=0;
+// document.getElementById("increase").onclick=function(){
+//     count++;
+//     document.getElementById("count").textContent=count;
+// }
+
+// document.getElementById("decrease").onclick=function(){
+//     count--;
+//     document.getElementById("count").textContent=count;
+// }
+
+// document.getElementById("reset").onclick=function(){
+//     count=0;
+//     document.getElementById("count").textContent=count;
+// }

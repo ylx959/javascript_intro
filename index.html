@@ -7,13 +7,21 @@
     <link rel="stylesheet" href="style.css">    <!--rel stand for relationship-->
 </head>
 <body>
-    <label id="count">0</label>
-    <br/>
-    <div id="buttonContainer">
-        <button id="decrease" class="buttons">DECREASE</button>
-        <button id="reset" class="buttons">RESET</button>
-        <button id="increase" class="buttons">INCREASE</button>
-    </div>
+    <input type="checkbox" id="myCheckBox">
+    <label for="myCheckBox">subscribe</label><br>
+
+  
+        <input type="radio" id="visaBtn" name="payment">
+        <label for="visaBtn">Visa</label><br>
+        <input type="radio" id="masterCardBtn" name="payment">
+        <label for="masterCardBtn">MasterCard</label><br>
+        <input type="radio" id="payPalBtn" name="payment">
+        <label for="payPalBtn">PayPal</label><br><br>
+
+        <button type="submit" id="mySubmit">submit</button>
+
+        <p id="subResult"></p>
+        <p id="paymentResult"></p>
     
     <script src="index.js"></script>
 </body>
