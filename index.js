@@ -1,31 +1,19 @@
-//checked=property that determines the checked state of an HTML checkbox or radio button element
+//string slicing =creating a substring from a portion of another string 
 
-const myCheckBox=document.getElementById("myCheckBox");
-const visaBtn=document.getElementById("visaBtn");
-const masterCardBtn=document.getElementById("masterCardBtn");
-const payPalBtn=document.getElementById("payPalBtn");
-const mySubmit=document.getElementById("mySubmit");
-const subResult=document.getElementById("subResult");
-const paymentResult=document.getElementById("paymentResult");
+//string.slice(start,end)
 
-mySubmit.onclick=()=>{
-    if(myCheckBox.checked){
-        subResult.textContent='You are subscribed !';
-    }
-    else{
-        subResult.textContent='You are NOT subscribed !';
-    }
+// const fullName="Broseph Code";
 
-    if(visaBtn.checked){
-        paymentResult.textContent="You are paying with Visa";
-    }
-    else if(masterCardBtn.checked){
-        paymentResult.textContent="You are paying with master";
-    }
-    else if(payPalBtn.checked){
-        paymentResult.textContent="You are paying with payPal";
-    }
-    else{
-        paymentResult.textContent="You haven't choosed the payment method"
-    }
-}
+// let firstName=fullName.slice(0,fullName.indexOf(" "));
+// let lastName=fullName.slice(fullName.indexOf(" ")+1);
+
+// console.log(firstName);
+// console.log(lastName);
+
+const email="Bro1@gmail.com";
+
+let username=email.slice(0,email.indexOf("@"));
+let extension=email.slice(email.indexOf("@")+1);
+
+console.log(username);
+console.log(extension);
