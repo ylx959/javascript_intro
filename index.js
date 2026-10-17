@@ -1,32 +1,49 @@
-function rollDice(){
-    const numOfDice=document.getElementById("numOfDice").value;
-    const diceResult=document.getElementById("diceResult");
-    const diceImage=document.getElementById("diceImage");
-    const values=[];
-    const images=[];
+//Random password Generator
 
-    if(numOfDice>6 || numOfDice<1){
-        window.alert("please enter the number between 1 and 6");
-        return;
+function generatePassword(length,includeLowercase,includeUppercase,includeSymbols,includeNumbers){
+    const lowercaseChars="abcdefghijklmnopqrstuvwxyz";
+    const uppercaseChars="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numberChars="0123456789";
+    const symbolChars="!@#$%^&*()_+-=";
+
+    let allowedChars="";
+    let password="";
+
+    allowedChars+=includeLowercase ? lowercaseChars :"";
+    allowedChars+=includeUppercase ? uppercaseChars : "";
+    allowedChars+=includeNumbers ? numberChars :"";
+    allowedChars+=includeSymbols ? symbolChars :"";
+
+    if(length<=1){
+        return `(password length must be at least 2)`;
     }
 
-    for(let i=0;i<numOfDice;i++){
-        let temp = Math.floor(Math.random() * 6) + 1;
-
-        values.push(temp);
-        images.push(`<img src="dice_image/dice-six-faces-${temp}.png">`);
+    if(allowedChars.length===0){
+        return `(At least 1 set of character needs to be selected)`;
     }
 
-    let total=0;
-
-    for(let value of values){
-        total+=value;
+    for(let i=0;i<length;i++){
+        const randomIndex=Math.floor(Math.random()*allowedChars.length);
+        password+=allowedChars[randomIndex];
     }
 
-    //display dice values
-    diceResult.textContent=`Total: ${total}`;
-    //display dice images
-    //dom 回傳 <img src="${item}">
-    diceImage.innerHTML=images.join(" ");
+    return password;
+}
 
+//DOM
+const passwordLength=document.getElementById("passwordLength");
+const includeLowercase=document.getElementById("includeLowercase");
+const includeUppercase=document.getElementById("includeUppercase");
+const includeSymbols=document.getElementById("includeSymbols");
+const includeNumbers=document.getElementById("includeNumbers");
+const result=document.getElementById("result");
+
+function generate(){
+    const password=generatePassword(Number(passwordLength.value),
+                                    includeLowercase.checked,
+                                    includeUppercase.checked,
+                                    includeSymbols.checked,
+                                    includeNumbers.checked);
+
+    result.textContent=password;
 }

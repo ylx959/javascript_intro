@@ -40,3 +40,21 @@ input{
 }
 
 
+
+#options{
+    display:inline-block;
+    text-align:left;
+    margin:20px 0;
+}
+
+#options input[type="checkbox"]{
+    width:24px;
+    height:24px;
+    margin-right:10px;
+    cursor:pointer;
+}
+
+#result{
+    font-family:"Courier New", monospace;
+    word-break:break-all;
+}

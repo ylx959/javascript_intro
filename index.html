@@ -8,15 +8,30 @@
 </head>
 <body>
 
-    <div id="container">
-        <h1>Dice Roller</h1>
-        <label># of dice: </label>
-        <input type="number" id="numOfDice" value="1" min="1" max="6">
-        <button onclick="rollDice()">Roll Dice</button>
-        <div id="diceResult"></div>
-        <div id="diceImage"></div>
-    </div>
-   
+    <form id="container">
+        <h1>Password Generator</h1>
+
+        <label for="passwordLength">Length: </label>
+        <input type="number" id="passwordLength" value="12" min="2"><br>
+
+        <div id="options">
+            <input type="checkbox" id="includeLowercase" checked>
+            <label for="includeLowercase">Lowercase (a-z)</label><br>
+
+            <input type="checkbox" id="includeUppercase" checked>
+            <label for="includeUppercase">Uppercase (A-Z)</label><br>
+
+            <input type="checkbox" id="includeNumbers" checked>
+            <label for="includeNumbers">Numbers (0-9)</label><br>
+
+            <input type="checkbox" id="includeSymbols" checked>
+            <label for="includeSymbols">Symbols (!@#$)</label><br>
+        </div>
+        <br>
+        <button type="button" onclick="generate()">Generate</button>
+        <p id="result"></p>
+    </form>
+
     <script src="index.js"></script>
 </body>
 </html>
