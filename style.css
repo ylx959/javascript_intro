@@ -1,13 +1,42 @@
-body{
-    font-family: Verdana;
-    font-size: 2em;
+#container{
+    font-family:Arial, Helvetica, sans-serif ;
+    text-align: center;
+    font-size: 2rem;
+    font-weight:bold;
 }
 
-#mySubmit{
-    font-size: 0.8em;
+button{
+    font-size:1.5rem;
+    padding:8px 12px;
+    border-radius: 10px;
+    border:none;
+    background-color: hsl(208, 31%, 54%);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
 }
 
+button :hover{
+    background-color: hsl(208, 40%, 31%);
 
+}
 
+button:active{
+    background-color: hsl(208, 34%, 66%);
+}
+
+input{
+    font-size:2rem;
+    width:150px;
+    text-align:center;
+    border-radius: 5px;
+    font-weight:bold;
+}
+
+#diceImage img{
+    width: 100px;
+    height:auto;
+    margin: 5px;
+}
 
 

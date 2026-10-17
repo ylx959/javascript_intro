@@ -24,3 +24,14 @@ do{
         console.log("Invalid credentials ! Please try again");
     }
 }while(!loggedIn);
+
+//for loop
+
+for (let i = 1; i <= 20; i++) {
+    if (i == 13) {
+        continue;
+        //break;
+    } else {
+        console.log(i);
+    }
+}
