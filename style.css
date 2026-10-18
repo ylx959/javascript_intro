@@ -17,12 +17,12 @@ button{
 }
 
 button :hover{
-    background-color: hsl(208, 40%, 31%);
+    background-color: hsl(208, 47%, 71%);
 
 }
 
 button:active{
-    background-color: hsl(208, 34%, 66%);
+    background-color: hsl(208, 59%, 86%);
 }
 
 input{

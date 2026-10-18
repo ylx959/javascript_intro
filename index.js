@@ -1,49 +1,24 @@
-//Random password Generator
+//object
 
-function generatePassword(length,includeLowercase,includeUppercase,includeSymbols,includeNumbers){
-    const lowercaseChars="abcdefghijklmnopqrstuvwxyz";
-    const uppercaseChars="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numberChars="0123456789";
-    const symbolChars="!@#$%^&*()_+-=";
+const person1={
+    firstName:"Spongebob",
+    lastName:"Squarepants",
+    age:30,
+    isEmployed:true,
+    sayHello: function(){console.log("Hi ! I am Spongebob !")},
+    sayBye:function(){console.log("Goodbye !")}
+};
 
-    let allowedChars="";
-    let password="";
+const person2={
+    firstName:"Patrick",
+    lastName:"Star",
+    age:42,
+    isEmployed:false,
+    sayHello:()=>console.log("Hey I'm Patrick"),
+    sayBye :function(){console.log("Bye...")}
+};
 
-    allowedChars+=includeLowercase ? lowercaseChars :"";
-    allowedChars+=includeUppercase ? uppercaseChars : "";
-    allowedChars+=includeNumbers ? numberChars :"";
-    allowedChars+=includeSymbols ? symbolChars :"";
+console.log(person1.firstName);
+console.log(person2.firstName);
 
-    if(length<=1){
-        return `(password length must be at least 2)`;
-    }
-
-    if(allowedChars.length===0){
-        return `(At least 1 set of character needs to be selected)`;
-    }
-
-    for(let i=0;i<length;i++){
-        const randomIndex=Math.floor(Math.random()*allowedChars.length);
-        password+=allowedChars[randomIndex];
-    }
-
-    return password;
-}
-
-//DOM
-const passwordLength=document.getElementById("passwordLength");
-const includeLowercase=document.getElementById("includeLowercase");
-const includeUppercase=document.getElementById("includeUppercase");
-const includeSymbols=document.getElementById("includeSymbols");
-const includeNumbers=document.getElementById("includeNumbers");
-const result=document.getElementById("result");
-
-function generate(){
-    const password=generatePassword(Number(passwordLength.value),
-                                    includeLowercase.checked,
-                                    includeUppercase.checked,
-                                    includeSymbols.checked,
-                                    includeNumbers.checked);
-
-    result.textContent=password;
-}
+//5:04:20
