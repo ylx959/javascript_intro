@@ -26,6 +26,13 @@
 
 const words=["apple","orange","banana"];
 
+const shortWords=words.filter(getShorWords);
+const longWrods=words.filter(getLongWords);
+
 function getShorWords(element){
     return element.length<=6;
+}
+
+function getLongWords(element){
+    return element.length >6;
 }
