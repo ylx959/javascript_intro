@@ -1,33 +1,39 @@
-//inheritance
+//Super Super
 
 class Animals{
-    alive=true;
-
-    eat(){
-        console.log(`This ${this.name} is eating`);
-    }
-    sleep(){
-        console.log(`This ${this.name} is sleeping`);
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
     }
 }
 
 class Rabbit extends Animals{
-    name="rabbit";
+
+    constructor(name,age,runSpeed){
+        super(name,age);
+        this.runSpeed=runSpeed;
+    }
 }
 
 class Fish extends Animals{
-    name="fish";
+    constructor(name,age,swimSpeed){
+        super(name,age);
+       this.swimSpeed=swimSpeed;
+    }
 }
 
 class Hawk extends Animals{
-    name="hawk";
+    constructor(name,age,flySpeed){
+        super(name,age);
+        this.flySpeed=flySpeed;
+        }
 }
 
-const rabbit=new Rabbit();
-const fish=new Fish();
-const hawk=new Hawk();
+const rabbit=new Rabbit("rabbit",2,20);
+const fish=new Fish("fish",1,10);
+const hawk=new Hawk("hawk",10,60);
 
-rabbit.alive=false;
-rabbit.eat();
-rabbit.sleep();
 
+console.log(rabbit.age);
+console.log(rabbit.name);
+console.log(rabbit.runSpeed);
