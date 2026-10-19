@@ -1,24 +1,33 @@
-//object
+//inheritance
 
-const person1={
-    firstName:"Spongebob",
-    lastName:"Squarepants",
-    age:30,
-    isEmployed:true,
-    sayHello: function(){console.log("Hi ! I am Spongebob !")},
-    sayBye:function(){console.log("Goodbye !")}
-};
+class Animals{
+    alive=true;
 
-const person2={
-    firstName:"Patrick",
-    lastName:"Star",
-    age:42,
-    isEmployed:false,
-    sayHello:()=>console.log("Hey I'm Patrick"),
-    sayBye :function(){console.log("Bye...")}
-};
+    eat(){
+        console.log(`This ${this.name} is eating`);
+    }
+    sleep(){
+        console.log(`This ${this.name} is sleeping`);
+    }
+}
 
-console.log(person1.firstName);
-console.log(person2.firstName);
+class Rabbit extends Animals{
+    name="rabbit";
+}
 
-//5:04:20
+class Fish extends Animals{
+    name="fish";
+}
+
+class Hawk extends Animals{
+    name="hawk";
+}
+
+const rabbit=new Rabbit();
+const fish=new Fish();
+const hawk=new Hawk();
+
+rabbit.alive=false;
+rabbit.eat();
+rabbit.sleep();
+

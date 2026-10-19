@@ -6,7 +6,8 @@ const person1={
     age:30,
     isEmployed:true,
     sayHello: function(){console.log("Hi ! I am Spongebob !")},
-    sayBye:function(){console.log("Goodbye !")}
+    sayBye:function(){console.log("Goodbye !")},
+    eat:function(){console.log("I am eating a Krabby Patty")},
 };
 
 const person2={
