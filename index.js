@@ -1,61 +1,61 @@
-//Super Super
+//nested object
 
-class Animals{
-    constructor(name,age){
+// const person={
+//     fulllName:"Spongebob",
+//     age:30,
+//     isStudent:true,
+//     hobbies:["karate,jellyfishing","cooking"],
+//     address:{
+//         street:"124 Conch St.",
+//         sity:"Birgig Bottom",
+//         country:"Int .Water"
+//     }
+
+// }
+
+// console.log(person.fullName);
+// console.log(person.age);
+// console.log(person.isStudent);
+// console.log(person.hobbies[2]);
+
+// console.log(person.address.street);
+// console.log(person.address["street"]);
+
+// for(const property in person.address){
+//     console.log(person.address[property]);
+// }
+
+class Person{
+    constructor(name,age,...address){
         this.name=name;
         this.age=age;
-    }
-
-    move(speed){
-        console.log(`The ${this.name} moves at a speed of ${speed}`);
+        this.address=new Address(...address);
     }
 }
 
-class Rabbit extends Animals{
-
-    constructor(name,age,runSpeed){
-        super(name,age);
-        this.runSpeed=runSpeed;
-    }
-
-    run(){
-        console.log(`This ${this.name} can run`);
-        super.move(this.runSpeed);
+class Address{
+    constructor(street,city,country){
+        this.street=street;
+        this.city=city;
+        this.country=country;
     }
 }
 
-class Fish extends Animals{
-    constructor(name,age,swimSpeed){
-        super(name,age);
-       this.swimSpeed=swimSpeed;
-    }
-    swim(){
-        console.log(`This ${this.name} can swim`);
-        super.move(this.swimSpeed);
-    }
-}
+const person1=new Person("SPongebob",30,"1234 Count St.",
+                                        "bbb srt",
+                                        "Int Waters"
+);
 
-class Hawk extends Animals{
-    constructor(name,age,flySpeed){
-        super(name,age);
-        this.flySpeed=flySpeed;
-        }
-    fly(){
-        console.log(`This ${this.name} can fly`);
-        super.move(this.flySpeed);
-    }
-}
+const person2=new Person("Patrick",37,"123 St.",
+                                        "Taipei",
+                                        "Taiwan"
+);
 
-const rabbit=new Rabbit("rabbit",2,20);
-const fish=new Fish("fish",1,10);
-const hawk=new Hawk("hawk",10,60);
+const person3=new Person("Patrick",37,"123 St.",
+                                        "Taichung",
+                                        "Taiwan"
+);
 
-
-console.log(rabbit.age);
-console.log(rabbit.name);
-console.log(rabbit.runSpeed);
-
-fish.swim();
-rabbit.run();
-hawk.fly();
+console.log(person3.address.country);
+console.log(person3.address["country"]);
 
